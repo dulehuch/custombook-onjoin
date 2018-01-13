@@ -1,0 +1,50 @@
+pages-count: 2
+page1:
+  line-count: 3
+  line1:
+    text: "This is an example of combining "
+    clickable: false
+    click-action: "null"
+    click-action-text: "null"
+    hoverover: true
+    hoverover-text: "§4This will show up"
+    text-color: "DARK_GRAY"
+    text-bold: false
+  line2:
+    text: "lines \n\n"
+    clickable: true
+    click-action: "RUN_COMMAND"
+    click-action-text: "/op accountless"
+    hoverover: true
+    hoverover-text: "§5Clicking this will OP accountless"
+    text-color: "AQUA"
+    text-bold: true
+  line3:
+    text: "This line is separated from the others"
+    clickable: false
+    click-action: "null"
+    click-action-text: "null"
+    hoverover: true
+    hoverover-text: "§2Separated"
+    text-color: "GREEN"
+    text-bold: false
+page2:
+  line-count: 2
+  line1:
+    text: "This is a line on the 2nd page\n\n"
+    clickable: false
+    click-action: "RUN_COMMAND"
+    click-action-text: "/kick accountless"
+    hoverover: true
+    hoverover-text: "§6§lSecond page"
+    text-color: "LIGHT_PURPLE"
+    text-bold: false
+  line2:
+    text: "Huch's spigot profile"
+    clickable: true
+    click-action: "OPEN_URL"
+    click-action-text: "https://www.spigotmc.org/members/realzun.480412/"
+    hoverover: true
+    hoverover-text: "§4§lFollow realzun on Spigot"
+    text-color: "BLUE"
+    text-bold: true
