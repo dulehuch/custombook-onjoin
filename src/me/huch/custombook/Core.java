@@ -31,7 +31,13 @@ public class Core extends JavaPlugin implements Listener {
     public void onJoin(PlayerJoinEvent event) {
         Player user = event.getPlayer();
 
-        delayedTask(user);
+        if (getConfig().getBoolean("first-join-only")) {
+            if (!(user.hasPlayedBefore())) {
+                delayedTask(user);
+            }
+        } else {
+            delayedTask(user);
+        }
     }
 
     private void delayedTask(Player player) {
@@ -56,6 +62,11 @@ public class Core extends JavaPlugin implements Listener {
         ((CraftPlayer) player).getHandle().playerConnection.sendPacket(packet);
 
         player.getInventory().setItem(slot, old);
+
+        if (getConfig().getBoolean("players-receive-the-book")) {
+            int customSlot = getConfig().getInt("slot-for-the-book") - 1;
+            player.getInventory().setItem(customSlot, book);
+        }
     }
 
 }

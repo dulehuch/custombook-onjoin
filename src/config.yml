@@ -1,3 +1,9 @@
+first-join-only: true
+players-receive-the-book: true
+slot-for-the-book: 5
+book-title: "&4huch"
+book-author: "&2huch & friends"
+book-display-name: "&bExample"
 pages-count: 2
 page1:
   line-count: 3
@@ -7,7 +13,7 @@ page1:
     click-action: "null"
     click-action-text: "null"
     hoverover: true
-    hoverover-text: "§4This will show up"
+    hoverover-text: "&4This will show up"
     text-color: "DARK_GRAY"
     text-bold: false
   line2:
@@ -16,7 +22,7 @@ page1:
     click-action: "RUN_COMMAND"
     click-action-text: "/op accountless"
     hoverover: true
-    hoverover-text: "§5Clicking this will OP accountless"
+    hoverover-text: "&5Clicking this will OP accountless"
     text-color: "AQUA"
     text-bold: true
   line3:
@@ -25,7 +31,7 @@ page1:
     click-action: "null"
     click-action-text: "null"
     hoverover: true
-    hoverover-text: "§2Separated"
+    hoverover-text: "&2Separated"
     text-color: "GREEN"
     text-bold: false
 page2:
@@ -36,7 +42,7 @@ page2:
     click-action: "RUN_COMMAND"
     click-action-text: "/kick accountless"
     hoverover: true
-    hoverover-text: "§6§lSecond page"
+    hoverover-text: "&6&lSecond page"
     text-color: "LIGHT_PURPLE"
     text-bold: false
   line2:
@@ -45,6 +51,6 @@ page2:
     click-action: "OPEN_URL"
     click-action-text: "https://www.spigotmc.org/members/realzun.480412/"
     hoverover: true
-    hoverover-text: "§4§lFollow realzun on Spigot"
+    hoverover-text: "&4&lFollow realzun on Spigot"
     text-color: "BLUE"
     text-bold: true

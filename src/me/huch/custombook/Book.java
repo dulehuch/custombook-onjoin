@@ -6,6 +6,7 @@ import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.chat.ComponentSerializer;
 import net.minecraft.server.v1_12_R1.IChatBaseComponent;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.craftbukkit.v1_12_R1.inventory.CraftMetaBook;
 import org.bukkit.inventory.ItemStack;
@@ -40,13 +41,13 @@ public class Book {
                         textComponent.setClickEvent(new ClickEvent(ClickEvent.Action.valueOf(clickAction), clickActionText));
                     }
                     if (instance.getConfig().getBoolean(pageS + ".line" + b + ".hoverover")) {
-                        String hoverText = instance.getConfig().getString(pageS + ".line" + b + ".hoverover-text");
+                        String hoverText = ChatColor.translateAlternateColorCodes('&', instance.getConfig().getString(pageS + ".line" + b + ".hoverover-text"));
                         textComponent.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(hoverText).create()));
                     }
                     if (instance.getConfig().getBoolean(pageS + ".line" + b + ".text-bold")) {
                         textComponent.setBold(true);
                     }
-                    net.md_5.bungee.api.ChatColor color = net.md_5.bungee.api.ChatColor.valueOf(instance.getConfig().getString(pageS + ".line" + b + ".text-color"));
+                    net.md_5.bungee.api.ChatColor color = net.md_5.bungee.api.ChatColor.valueOf(instance.getConfig().getString(pageS + ".line" + b + ".text-color").toUpperCase());
                     textComponent.setColor(color);
 
                     base.addExtra(textComponent);
@@ -56,7 +57,9 @@ public class Book {
                 pages.add(page);
             }
 
-            meta.setTitle("Made by Huch w help of other people from Spigot");
+            meta.setTitle(ChatColor.translateAlternateColorCodes('&', instance.getConfig().getString("book-title")));
+            meta.setAuthor(ChatColor.translateAlternateColorCodes('&', instance.getConfig().getString("book-author")));
+            meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', instance.getConfig().getString("book-display-name")));
             book.setItemMeta(meta);
 
             return book;
