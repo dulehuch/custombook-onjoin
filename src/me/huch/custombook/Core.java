@@ -32,11 +32,25 @@ public class Core extends JavaPlugin implements Listener {
         Player user = event.getPlayer();
 
         if (getConfig().getBoolean("first-join-only")) {
-            if (!(user.hasPlayedBefore())) {
-                delayedTask(user);
+            if (getConfig().getBoolean("use-permission")) {
+                if (user.hasPermission("cwboj.use")) {
+                    if (!(user.hasPlayedBefore())) {
+                        delayedTask(user);
+                    }
+                }
+            } else {
+                if (!(user.hasPlayedBefore())) {
+                    delayedTask(user);
+                }
             }
         } else {
-            delayedTask(user);
+            if (getConfig().getBoolean("use-permission")) {
+                if (user.hasPermission("cwboj.use")) {
+                    delayedTask(user);
+                }
+            } else {
+                delayedTask(user);
+            }
         }
     }
 
@@ -55,7 +69,7 @@ public class Core extends JavaPlugin implements Listener {
         player.getInventory().setItem(slot, book);
 
         ByteBuf buf = Unpooled.buffer(256);
-        buf.setByte(0, (byte)0);
+        buf.setByte(0, (byte) 0);
         buf.writerIndex(1);
 
         PacketPlayOutCustomPayload packet = new PacketPlayOutCustomPayload("MC|BOpen", new PacketDataSerializer(buf));

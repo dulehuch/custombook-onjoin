@@ -1,4 +1,5 @@
 first-join-only: true
+use-permission: false
 players-receive-the-book: true
 slot-for-the-book: 5
 book-title: "&4huch"
