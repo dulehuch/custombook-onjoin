@@ -4,3 +4,4 @@ main: me.huch.custombook.Core
 
 permissions:
   cwboj.use:
+    default: op
